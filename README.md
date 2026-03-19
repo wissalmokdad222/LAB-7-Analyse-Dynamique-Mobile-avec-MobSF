@@ -3,11 +3,11 @@
 Ce laboratoire porte sur l'analyse dynamique (runtime) de l'application Android **DIVA (Damn Insecure and Vulnerable App)** en utilisant **MobSF (Mobile Security Framework)**.
 
 ##  Objectifs du lab
-- Comprendre en profondeur l’analyse dynamique (runtime) d’une application Android avec MobSF.
-- Configurer un émulateur propre sans Play Store.
-- Installer/lancer MobSF via Docker.
-- Tester l’APK vulnérable DIVA en dynamique : logs runtime, trafic réseau, instrumentation Frida, proxy HTTPS, etc.
-- Apprendre à détecter des vulnérabilités en temps réel (stockage insecure, intents, hard-coded secrets, etc.).
+-Comprendre concrètement comment fonctionne l’analyse dynamique d’une application Android avec MobSF (ce qui se passe pendant l’exécution).
+-Mettre en place un émulateur Android propre, sans Play Store, pour éviter les interférences.
+-Installer et lancer MobSF facilement avec Docker.
+-Tester une application vulnérable (DIVA) en conditions réelles : observer les logs, le trafic réseau, utiliser Frida, configurer le proxy HTTPS, etc.
+-Apprendre à repérer les failles de sécurité en direct, comme le stockage non sécurisé, les intents exposés ou les informations sensibles codées en dur.
 
 ---
 

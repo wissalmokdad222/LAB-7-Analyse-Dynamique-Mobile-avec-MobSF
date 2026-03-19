@@ -2,7 +2,7 @@
 
 Ce laboratoire porte sur l'analyse dynamique (runtime) de l'application Android **DIVA (Damn Insecure and Vulnerable App)** en utilisant **MobSF (Mobile Security Framework)**.
 
-## 🎯 Objectifs du lab
+##  Objectifs du lab
 - Comprendre en profondeur l’analyse dynamique (runtime) d’une application Android avec MobSF.
 - Configurer un émulateur propre sans Play Store.
 - Installer/lancer MobSF via Docker.
@@ -11,30 +11,26 @@ Ce laboratoire porte sur l'analyse dynamique (runtime) de l'application Android 
 
 ---
 
-## 🚀 Étape 1 : Création de l’émulateur AVD sans Play Store
-1. Ouvrez **Android Studio** → **Tools** → **AVD Manager** → **Create Virtual Device**.
-2. Choisissez un téléphone (ex. : Pixel 5 ou Pixel 6).
-3. Dans **System Image** : Sélectionnez Android (ou Google APIs) **SANS "Google Play"**.
-4. Choisissez l'API 28 à 30 (recommandé : API 29 ou 30, x86_64).
-5. Nommez l’AVD : `MobSF_DIVA_API_30`.
+##  Étape 1 : Création de l’émulateur AVD sans Play Store
+![](https://github.com/user-attachments/assets/05086294-23d6-4943-b996-3bdf1e39eef1)
 
-## 📂 Étape 2 : Cloner MobSF pour les scripts AVD
+##  Étape 2 : Cloner MobSF pour les scripts AVD
 Ouvrez un terminal et tapez :
 ```bash
 git clone https://github.com/MobSF/Mobile-Security-Framework-MobSF.git
 cd Mobile-Security-Framework-MobSF
 ```
-
-## 🛠️ Étape 3 : Lancement de l’émulateur avec le script MobSF
+![](https://github.com/user-attachments/assets/8d18e771-812f-4453-829f-cfd51102c1bb)
+##  Étape 3 : Lancement de l’émulateur avec le script MobSF
 Dans le dossier MobSF :
 - **Windows** : `scripts\start_avd.ps1`
 Le script liste vos AVD → choisissez `MobSF_DIVA_API_30`.
 ```bash
 ./scripts/start_avd.sh MobSF_DIVA_API_30
 ```
-L'émulateur démarre (30-60s). Vérifiez avec `adb devices` pour voir `emulator-5554 device`.
-
-## 🐳 Étape 4 : Installation et lancement de MobSF via Docker
+![](https://github.com/user-attachments/assets/97cbc09c-1461-4ff0-9a64-1bdf3f1aef38)
+![](https://github.com/user-attachments/assets/cf95a2cf-b8e2-4f2b-893a-d4b64c5b78de)
+##  Étape 4 : Installation et lancement de MobSF via Docker
 Récupérez l'image :
 ```bash
 docker pull opensecurity/mobile-security-framework-mobsf:latest
@@ -49,22 +45,32 @@ docker run -it --rm \
 Accès via navigateur : `http://127.0.0.1:8000` (Login: `mobsf` / Pass: `mobsf`).
 
 ---
+![](https://github.com/user-attachments/assets/134c84ac-4f9e-43bf-bfd0-5a2c7b81854a)
+![](https://github.com/user-attachments/assets/53fd64df-f5d6-4d85-8405-f4a5e361b3d1)
 
-## 📱 Étape 5 : Préparation de l’APK DIVA
+##  Étape 5 : Préparation de l’APK DIVA
 DIVA est une application contenant 13 challenges vulnérables.
+![](https://github.com/user-attachments/assets/79613832-8054-4dd5-a281-6f07f5dc9379)
 - Téléchargez l'APK sur le site officiel ou via GitHub.
 - Gardez le fichier `diva.apk` prêt sur votre bureau.
+![](https://github.com/user-attachments/assets/c24a3958-4f5c-4123-9217-138f4703477f)
 
-## 🔍 Étape 6 : Analyse Statique + Dynamique de DIVA
+
+##  Étape 6 : Analyse Statique + Dynamique de DIVA
 1. Dans MobSF → **Upload & Analyze** → choisissez `diva.apk`.
-2. Une fois l'analyse statique terminée, cliquez sur **Start Dynamic Analyzer**.
+   ![](https://github.com/user-attachments/assets/6ee3e40d-0ecc-49cb-ac79-f7f043e9d6e2)
+   ![](https://github.com/user-attachments/assets/ba56183a-6da7-4f7e-b9be-3936d5e0053e)
+3. Une fois l'analyse statique terminée, cliquez sur **Start Dynamic Analyzer**.
 
 MobSF va configurer automatiquement l'environnement (Frida Server, Proxy HTTPS, installation de l'APK).
-
+![](https://github.com/user-attachments/assets/85c04cd6-2743-4bfb-bae9-01c54af6826c)
+![](https://github.com/user-attachments/assets/04b7458c-a2f1-4daa-83b1-3345183d5982)
+![](https://github.com/user-attachments/assets/ef7690c1-0fe0-4ff5-b352-2f4cb01a9a4a)
 ### Exploration dans MobSF Dynamic Analyzer :
-- **Runtime Logs** : Visualisation des logs en live.
-- **Network Traffic** : Interception du trafic HTTP/HTTPS.
-- **Frida** : Injection de code et hooking de méthodes.
+![](https://github.com/user-attachments/assets/4b1aee56-388d-488b-8d19-4ef4f3ea3720)
+![](https://github.com/user-attachments/assets/4b1aee56-388d-488b-8d19-4ef4f3ea3720)
+![](https://github.com/user-attachments/assets/3b92f0b6-d3cb-421a-a520-200d5b566e9b)
+![](https://github.com/user-attachments/assets/b6b1c325-c45c-4750-80be-a71ffe74a681)
 
 ### Exemples de vulnérabilités trouvées :
 | Challenge | Observation |
@@ -75,7 +81,7 @@ MobSF va configurer automatiquement l'environnement (Frida Server, Proxy HTTPS, 
 
 ---
 
-## 🛠️ Description du Menu Dynamic Analyzer
+##  Description du Menu Dynamic Analyzer
 
 | Option | Utilité en analyse dynamique |
 | :--- | :--- |
@@ -88,22 +94,9 @@ MobSF va configurer automatiquement l'environnement (Frida Server, Proxy HTTPS, 
 | **Logcat Stream** | Afficher les logs Android en temps réel (détection de fuites). |
 | **Generate Report** | Regrouper tous les résultats dans un rapport final. |
 
----
 
-## 📸 Captures d'écran du Laboratoire
 
-### Interface Globale et Menu
-![Menu MobSF](20.png)
-![Dynamic Analyzer](18.png)
-
-### Tests de Vulnérabilités
-![Insecure Logging](1.png)
-![Logcat Output](2.png)
-![Data Storage](7.png)
-![SQL Injection](14.png)
-![Access Control](16.png)
-
-## 🏁 Conclusion
+##  Conclusion
 Ce lab m'a permis de pratiquer l'analyse en temps réel, d'intercepter du trafic chiffré et d'observer comment une application manipule les données sensibles en mémoire et sur le stockage.
 
 ---

@@ -7,7 +7,7 @@ Ce laboratoire porte sur l'analyse dynamique (runtime) de l'application Android 
 
 -Mettre en place un émulateur Android propre, sans Play Store, pour éviter les interférences.
 
--Installer et lancer MobSF facilement avec Docker.
+-Installer et lancer MobSF facilement avec Docker. 
 
 -Tester une application vulnérable (DIVA) en conditions réelles : observer les logs, le trafic réseau, utiliser Frida, configurer le proxy HTTPS, etc.
 

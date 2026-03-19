@@ -4,9 +4,13 @@ Ce laboratoire porte sur l'analyse dynamique (runtime) de l'application Android 
 
 ##  Objectifs du lab
 -Comprendre concrètement comment fonctionne l’analyse dynamique d’une application Android avec MobSF (ce qui se passe pendant l’exécution).
+
 -Mettre en place un émulateur Android propre, sans Play Store, pour éviter les interférences.
+
 -Installer et lancer MobSF facilement avec Docker.
+
 -Tester une application vulnérable (DIVA) en conditions réelles : observer les logs, le trafic réseau, utiliser Frida, configurer le proxy HTTPS, etc.
+
 -Apprendre à repérer les failles de sécurité en direct, comme le stockage non sécurisé, les intents exposés ou les informations sensibles codées en dur.
 
 ---

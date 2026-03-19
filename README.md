@@ -68,7 +68,7 @@ MobSF va configurer automatiquement l'environnement (Frida Server, Proxy HTTPS, 
 ![](https://github.com/user-attachments/assets/ef7690c1-0fe0-4ff5-b352-2f4cb01a9a4a)
 ### Exploration dans MobSF Dynamic Analyzer :
 ![](https://github.com/user-attachments/assets/4b1aee56-388d-488b-8d19-4ef4f3ea3720)
-![](https://github.com/user-attachments/assets/4b1aee56-388d-488b-8d19-4ef4f3ea3720)
+![](https://github.com/user-attachments/assets/57560c89-5ab5-4885-8f15-f040c317ae2f)
 ![](https://github.com/user-attachments/assets/3b92f0b6-d3cb-421a-a520-200d5b566e9b)
 ![](https://github.com/user-attachments/assets/b6b1c325-c45c-4750-80be-a71ffe74a681)
 
